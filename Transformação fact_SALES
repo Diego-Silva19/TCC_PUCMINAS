@@ -1,0 +1,8 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="fact_SALES"]}[Data]
+= Table.TransformColumnTypes(dbo_fact_SALES,{{"ITEMSALE_ID", Int64.Type}, {"PROFIT", Currency.Type}})
+= Table.ReplaceValue(#"Tipo Alterado","Critical","Crítica",Replacer.ReplaceText,{"ORDER_PRIORITY"})
+= Table.ReplaceValue(#"Valor Substituído","Low","Baixa",Replacer.ReplaceText,{"ORDER_PRIORITY"})
+= Table.ReplaceValue(#"Valor Substituído1","Medium","Média",Replacer.ReplaceText,{"ORDER_PRIORITY"})
+= Table.ReplaceValue(#"Valor Substituído2","High","Alta",Replacer.ReplaceText,{"ORDER_PRIORITY"})
+= Table.TransformColumnTypes(#"Valor Substituído3",{{"DISCOUNT", Percentage.Type}})

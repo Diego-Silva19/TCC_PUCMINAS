@@ -1,0 +1,3 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="dim_ADVERTISEMENT"]}[Data]
+Table.ReplaceValue(dbo_dim_ADVERTISEMENT,"Other pages","Outros sites",Replacer.ReplaceText,{"ADVERTISEMENT_CHANNEL"})

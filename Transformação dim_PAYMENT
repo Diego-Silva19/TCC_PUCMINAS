@@ -1,0 +1,7 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="dim_PAYMENT"]}[Data]
+= Table.ReplaceValue(dbo_dim_PAYMENT,"credit","Crédito",Replacer.ReplaceText,{"PAYMENT_TYPE"})
+= Table.ReplaceValue(#"Valor Substituído","bank transfer","Transferência bancária",Replacer.ReplaceText,{"PAYMENT_TYPE"})
+= Table.ReplaceValue(#"Valor Substituído1","debit","Débito",Replacer.ReplaceText,{"PAYMENT_TYPE"})
+= Table.ReplaceValue(#"Valor Substituído2","voucher","Voucher",Replacer.ReplaceText,{"PAYMENT_TYPE"})
+= Table.TransformColumnTypes(#"Valor Substituído3",{{"PAYMENT_VALUE", Currency.Type}})

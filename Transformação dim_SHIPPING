@@ -1,0 +1,7 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="dim_SHIPPING"]}[Data]
+= Table.TransformColumnTypes(dbo_dim_SHIPPING,{{"SHIPPING_COST", Currency.Type}})
+= Table.ReplaceValue(#"Tipo Alterado","Same Day","Mesmo dia",Replacer.ReplaceText,{"SHIP_MODE"})
+= Table.ReplaceValue(#"Valor Substituído","Second Class","Segunda Classe",Replacer.ReplaceText,{"SHIP_MODE"})
+= Table.ReplaceValue(#"Valor Substituído1","First Class","Primeira Classe",Replacer.ReplaceText,{"SHIP_MODE"})
+= Table.ReplaceValue(#"Valor Substituído2","Standard Class","Classe Padrão",Replacer.ReplaceText,{"SHIP_MODE"})

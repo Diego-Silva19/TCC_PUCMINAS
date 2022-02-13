@@ -1,0 +1,6 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="dim_TRADES"]}[Data]
+= Table.ReplaceValue(dbo_dim_TRADES,"Damaged product","Produto danificado",Replacer.ReplaceText,{"REASON"})
+= Table.ReplaceValue(#"Valor Substituído","Does not match the ad","Não corresponde ao anúncio",Replacer.ReplaceText,{"REASON"})
+= Table.ReplaceValue(#"Valor Substituído1","Wrong product delivered","Produto entregue errado",Replacer.ReplaceText,{"REASON"})
+= Table.ReplaceValue(#"Valor Substituído2","Others","Outros",Replacer.ReplaceText,{"REASON"})

@@ -1,0 +1,2 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="dim_WORLD_MARKET"]}[Data]

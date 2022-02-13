@@ -1,0 +1,6 @@
+= Sql.Database("localhost\SQLEXPRESS", "DUNDER")
+= Fonte{[Schema="dbo",Item="dim_CUSTOMERS"]}[Data]
+= Table.TransformColumnTypes(dbo_dim_CUSTOMERS,{{"POSTALCODE", Int64.Type}})
+= Table.ReplaceValue(#"Tipo Alterado","Corporate","Corporação",Replacer.ReplaceText,{"SEGMENT"})
+= Table.ReplaceValue(#"Tipo Alterado","Corporate","Corporação",Replacer.ReplaceText,{"SEGMENT"})
+= Table.ReplaceValue(#"Valor Substituído1","Female","Feminino",Replacer.ReplaceText,{"GENDER"})
